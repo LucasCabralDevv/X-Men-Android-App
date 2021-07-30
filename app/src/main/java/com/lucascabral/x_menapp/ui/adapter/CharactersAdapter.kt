@@ -28,7 +28,8 @@ class CharactersAdapter : PagingDataAdapter<Character, MyViewHolder>(DiffUtilCal
         fun bind(data: Character) {
             with(binding) {
                 characterNameTextView.text = data.name
-                characterAliasTextView.text = data.alias
+                characterAliasTextView.text = if (data.alias.isEmpty()) data.name else data.alias
+                characterAffiliationTextView.text = data.affiliation
                 Glide.with(characterImageView).load(data.img).into(characterImageView)
             }
         }
