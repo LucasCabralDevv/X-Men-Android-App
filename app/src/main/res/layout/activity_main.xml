@@ -15,7 +15,7 @@
         android:theme="@style/Theme.AppCompat.NoActionBar" />
 
     <fragment
-        android:id="@+id/marvel_navigation"
+        android:id="@+id/xmen_navigation"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
