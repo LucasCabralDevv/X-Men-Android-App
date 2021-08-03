@@ -1,6 +1,7 @@
 package com.lucascabral.x_menapp.ui.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
@@ -30,7 +31,15 @@ class CharactersAdapter : PagingDataAdapter<Character, MyViewHolder>(DiffUtilCal
                 characterNameTextView.text = data.name
                 characterAliasTextView.text = if (data.alias.isEmpty()) data.name else data.alias
                 characterAffiliationTextView.text = data.affiliation
+                characterDescriptionTextView.text = data.description
                 Glide.with(characterImageView).load(data.img).into(characterImageView)
+                val isExpandable = data.expanded
+                binding.expandableLayout.visibility = if (isExpandable) View.VISIBLE else View.GONE
+
+                binding.characterNameTextView.setOnClickListener {
+                    data.expanded = !isExpandable
+                    notifyItemChanged(bindingAdapterPosition)
+                }
             }
         }
     }

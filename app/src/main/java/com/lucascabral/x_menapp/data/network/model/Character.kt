@@ -8,5 +8,6 @@ data class Character(
     val id: Int,
     val img: String,
     val name: String,
-    val powers: Any
+    val powers: Any,
+    var expanded: Boolean = false
 )

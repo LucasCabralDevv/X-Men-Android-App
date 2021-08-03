@@ -8,15 +8,16 @@
     android:padding="16dp">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/characterCardView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/red_main"
-        app:cardCornerRadius="12dp"
+        app:cardCornerRadius="16dp"
         app:cardElevation="4dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:background="@color/yellow">
 
             <ImageView
@@ -25,8 +26,7 @@
                 android:layout_height="100dp"
                 android:layout_marginStart="8dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:src="@drawable/ic_launcher_background" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/characterNameTextView"
@@ -66,7 +66,29 @@
                 app:layout_constraintStart_toEndOf="@+id/characterImageView"
                 app:layout_constraintTop_toBottomOf="@+id/characterAliasTextView"
                 tools:text="X-Men" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/expandableLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/characterImageView">
+
+                <TextView
+                    android:id="@+id/characterDescriptionTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/red_main"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
