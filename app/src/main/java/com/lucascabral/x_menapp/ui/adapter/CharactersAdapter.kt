@@ -36,7 +36,7 @@ class CharactersAdapter : PagingDataAdapter<Character, MyViewHolder>(DiffUtilCal
                 val isExpandable = data.expanded
                 binding.expandableLayout.visibility = if (isExpandable) View.VISIBLE else View.GONE
 
-                binding.characterNameTextView.setOnClickListener {
+                binding.characterCardView.setOnClickListener {
                     data.expanded = !isExpandable
                     notifyItemChanged(bindingAdapterPosition)
                 }
